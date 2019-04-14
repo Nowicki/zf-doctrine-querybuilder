@@ -29,7 +29,7 @@ class IsNotNull extends AbstractFilter
         $queryBuilder->$queryType(
             $queryBuilder
                 ->expr()
-                ->isNotNull($option['alias'] . '.' . $option['field'])
+                ->isNotNull(($option['alias'] ? ($option['alias'] . '.') : '') . $option['field'])
         );
     }
 }
